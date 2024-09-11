@@ -126,10 +126,35 @@ We consider ourselves to be language agnostic here at Wave, so feel free to use 
 Please commit the following to this `README.md`:
 
 1. Instructions on how to build/run your application
+      - Clone the repo
+      - Run `npm install`
+      - Setup environment variables for
+          - DATABASE_HOST=localhost
+          - DATABASE_PORT=5432
+          - DATABASE_USERNAME=waveadmin
+          - DATABASE_PASSWORD
+          - DATABASE_NAME=wave
+      - Run database migration with `npm run typeorm:migrate` and then `npm run typeorm:run`
+      - Run the application with `npm run start`
+        
 1. Answers to the following questions:
    - How did you test that your implementation was correct?
+      - I ensured the different cases in the specification provided the required output. Screenshots of these are documented in the Testing section.
    - If this application was destined for a production environment, what would you add or change?
+      - Pagination on the returned table to make it a more efficient call
+      - I would add validation around file upload
+      - More error reporting for observability 
+      - The typeorm synchronization parameter would need to be false
+      - A table from which to fetch the job groups and rates since that is potentially variable
    - What compromises did you have to make as a result of the time constraints of this challenge?
+      - Add unit tests 
+      - An actual UI for uploading 
+## Testing
+1. Duplicate file rejection ![image](https://github.com/user-attachments/assets/95875237-7cac-4e90-9692-2675b73efbae)
+
+2. File upload successful ![image](https://github.com/user-attachments/assets/addb0e09-d758-4d4e-92d7-1fd8c1c03dea)
+
+3. Parsing successfully ![image](https://github.com/user-attachments/assets/f04e24c0-01dc-4ee6-a77b-40d6f5f53dc1)
 
 ## Submission Instructions
 
